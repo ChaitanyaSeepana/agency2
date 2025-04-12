@@ -5,7 +5,8 @@ services:
     plan: free
     region: oregon
     nodeVersion: 18.19.0
-    buildCommand: npm install && npm run build
+    packageManager: npm
+    buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
       - key: NEXT_PUBLIC_SUPABASE_URL
