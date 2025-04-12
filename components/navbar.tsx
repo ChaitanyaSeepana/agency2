@@ -15,42 +15,37 @@ export default function Navbar() {
   return (
     <nav className="max-w-[1208px] mx-auto pt-6 md:pt-[44px] px-4 lg:px-0 relative z-50">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="Ayhro Logo" width={40} height={40} />
-          <span
-            className="text-[#00FF85] font-medium"
-            style={{
-              fontFamily: "Delius",
-              fontSize: "32px",
-              fontStyle: "normal",
-              fontWeight: 400,
-            }}
-          >
+          <span className="text-[#00FF85] font-medium" style={{ fontFamily: "Delius", fontSize: "32px", fontWeight: 400 }}>
             ayhro
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <Link href="#services" className="text-white hover:text-[#00FF85] transition-colors">
             Services
           </Link>
-          <Link href="#portfolio" className="text-white hover:text-[#00FF85] transition-colors">
+          <Link href="#projects" className="text-white hover:text-[#00FF85] transition-colors">
             Projects
           </Link>
-          <Link
-            href="#testimonials"
-            className="text-white hover:text-[#00FF85] transition-colors text-[#00FF85] border-b border-[#00FF85]"
-          >
+          <Link href="#reviews" className="text-white hover:text-[#00FF85] transition-colors">
             Reviews
           </Link>
           <Link href="#contact" className="text-white hover:text-[#00FF85] transition-colors">
             Contact us
           </Link>
-          <button className="bg-[#00FF85] text-black px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors font-medium">
-            Get Quote
-          </button>
         </div>
+
+        {/* Get Quote Button */}
+        <Link 
+          href="/quote" 
+          className="hidden md:block bg-[#00FF85] text-black px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors font-medium"
+        >
+          Get Quote
+        </Link>
 
         {/* Mobile Menu Button */}
         <button className="md:hidden text-white" onClick={toggleMenu}>
@@ -70,15 +65,15 @@ export default function Navbar() {
               Services
             </Link>
             <Link
-              href="#portfolio"
+              href="#projects"
               className="text-white hover:text-[#00FF85] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </Link>
             <Link
-              href="#testimonials"
-              className="text-white hover:text-[#00FF85] transition-colors text-[#00FF85] border-b border-[#00FF85] py-2"
+              href="#reviews"
+              className="text-white hover:text-[#00FF85] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Reviews
@@ -90,9 +85,13 @@ export default function Navbar() {
             >
               Contact us
             </Link>
-            <button className="bg-[#00FF85] text-black px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors font-medium w-full">
+            <Link
+              href="/quote"
+              className="bg-[#00FF85] text-black px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors font-medium w-full text-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Get Quote
-            </button>
+            </Link>
           </div>
         </div>
       )}

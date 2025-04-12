@@ -1,12 +1,25 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+// Validate environment variables
+if (!process.env.RESEND_API_KEY) {
+  throw new Error('RESEND_API_KEY environment variable is not set');
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
-const ADMIN_EMAIL = 'sahi0045@hotmail.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'sahi0045@hotmail.com';
 
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
+    
+    // Validate required fields
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
     
     console.log('Attempting to send email with:', {
       to: ADMIN_EMAIL,

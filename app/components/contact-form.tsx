@@ -27,11 +27,30 @@ export default function ContactForm() {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: formData.message
+          message: formData.message,
+          status: 'new',
+          created_at: new Date().toISOString()
         }])
 
       if (dbError) {
         throw dbError
+      }
+
+      // Send email notification
+      const emailResponse = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }),
+      })
+
+      if (!emailResponse.ok) {
+        console.error('Failed to send email notification')
       }
 
       toast.success('Message sent successfully!', {

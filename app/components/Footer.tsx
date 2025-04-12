@@ -1,62 +1,119 @@
 import Link from 'next/link'
-import { Linkedin, Instagram } from 'lucide-react'
 import Image from 'next/image'
+
+const InstagramIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className="hover:scale-110 transition-transform"
+  >
+    <path
+      d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M17.5 6.51L17.51 6.49889"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
+const LinkedInIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className="hover:scale-110 transition-transform"
+  >
+    <path
+      d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M7 17V13.5V10"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7 7.01L7.01 6.99889"
+      stroke="#00FF85"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1621] h-[160px] mt-20 flex items-center">
-      <div className="max-w-[1440px] w-full mx-auto px-4 lg:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="bg-[#0A1621] text-white py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Logo and Copyright */}
-          <div className="order-2 md:order-1 flex items-center gap-4">
-            <div className="flex items-center gap-4">
-              <Image src="/images/logo.png" alt="Ayhro Logo" width={120} height={120} className="object-contain" />
-              <span
-                className="text-[#00FF85] font-medium"
-                style={{
-                  fontFamily: "Delius",
-                  fontSize: "38px",
-                  fontStyle: "normal",
-                  fontWeight: 400,
-                  marginLeft: "-55px",
-                }}
-              >
-                ayhro
-              </span>
-            </div>
-            <div className="hidden md:block w-px h-8 bg-white/20 mx-4"></div>
-            <p className="text-white/60 text-base whitespace-nowrap">© Copyright {new Date().getFullYear()} , All right reserved</p>
+          <div className="flex items-center mb-4 md:mb-0">
+            <Image 
+              src="/images/logo.png"
+              alt="Ayhro Logo"
+              width={50}
+              height={50}
+            />
+            <span className="text-[#00FF85] ml-2 text-lg">ayhro</span>
+            <span className="text-gray-400 ml-4 text-sm">© Copyright 2023, All right reserved</span>
           </div>
 
-          {/* Links and Social */}
-          <div className="flex items-center gap-10 lg:gap-16 order-1 md:order-2">
-            <div className="flex items-center gap-8 lg:gap-14">
-              <Link href="/privacy-policy" className="text-white/60 hover:text-[#00FF85] transition-colors text-base whitespace-nowrap">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-of-service" className="text-white/60 hover:text-[#00FF85] transition-colors text-base whitespace-nowrap">
-                Terms
-              </Link>
-              <Link href="tel:+919392954474" className="text-white/60 hover:text-[#00FF85] transition-colors text-base whitespace-nowrap flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#00FF85]">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Get in Touch
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-4">
+          {/* Navigation Links */}
+          <div className="flex items-center space-x-8">
+            <Link href="/privacy" className="text-gray-400 hover:text-[#00FF85] transition-colors text-sm">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-gray-400 hover:text-[#00FF85] transition-colors text-sm">
+              Terms
+            </Link>
+            <Link href="/contact" className="text-gray-400 hover:text-[#00FF85] transition-colors text-sm">
+              Get in Touch
+            </Link>
+            <div className="flex items-center space-x-3">
               <Link 
-                href="#" 
-                className="bg-white w-12 h-12 rounded flex items-center justify-center hover:opacity-90 transition-opacity"
+                href="https://www.linkedin.com/company/ayhro" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
               >
-                <Linkedin className="w-6 h-6 text-[#0A1621]" />
+                <LinkedInIcon />
               </Link>
               <Link 
-                href="https://www.instagram.com/ayhro.tech/" 
-                className="bg-white w-12 h-12 rounded flex items-center justify-center hover:opacity-90 transition-opacity"
+                href="https://www.instagram.com/ayhro" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
               >
-                <Instagram className="w-6 h-6 text-[#0A1621]" />
+                <InstagramIcon />
               </Link>
             </div>
           </div>
