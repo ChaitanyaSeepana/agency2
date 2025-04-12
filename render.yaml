@@ -9,18 +9,18 @@ services:
     startCommand: npm start
     envVars:
       - key: NEXT_PUBLIC_SUPABASE_URL
-        sync: false
+        value: https://wzdavxccbzxnxhdtcjlu.supabase.co
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6ZGF2eGNjYnp4bnhoZHRjamx1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0MTExNjQsImV4cCI6MjA1OTk4NzE2NH0.jN8zWrSEP_0SS32scSg_MwDOLjMNcJPKyw2bkUUJBqE
       - key: SMTP_HOST
-        sync: false
+        value: smtp.gmail.com
       - key: SMTP_PORT
-        sync: false
+        value: "587"
       - key: SMTP_USER
-        sync: false
+        value: sahithkumarpasupuleti@gmail.com
       - key: SMTP_PASSWORD
-        sync: false
+        value: Sahi@123
       - key: RESEND_API_KEY
-        sync: false
+        value: re_PteJpSck_PwuUX7jgQSqe5Ga7JUmc5zhr
     healthCheckPath: /
     autoDeploy: true 
