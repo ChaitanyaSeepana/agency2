@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: agency2
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: RESEND_API_KEY
+        value: re_PteJpSck_PwuUX7jgQSqe5Ga7JUmc5zhr
+      - key: ADMIN_EMAIL
+        value: sahi0045@hotmail.com
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://wzdavxccbzxnxhdtcjlu.supabase.co
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6ZGF2eGNjYnp4bnhoZHRjamx1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0MTExNjQsImV4cCI6MjA1OTk4NzE2NH0.jN8zWrSEP_0SS32scSg_MwDOLjMNcJPKyw2bkUUJBqE 
