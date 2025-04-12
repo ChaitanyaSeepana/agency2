@@ -1,18 +1,24 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Validate environment variables
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY environment variable is not set');
-}
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'sahi0045@hotmail.com';
-
+// Temporary fix - comment out email logic to test build
 export async function POST(request: Request) {
   try {
+    // Temporary response to test build
+    return NextResponse.json({ message: "Temp fix working" });
+
+    // Commented out email logic for testing
+    /*
     const { name, email, message } = await request.json();
     
+    // Validate environment variables
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY environment variable is not set');
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'sahi0045@hotmail.com';
+
     // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -20,15 +26,6 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-    
-    console.log('Attempting to send email with:', {
-      to: ADMIN_EMAIL,
-      from: 'Ayhro Contact <onboarding@resend.dev>',
-      subject: `New Contact Form Submission from ${name}`,
-      name,
-      email,
-      message
-    });
 
     const data = await resend.emails.send({
       from: 'Ayhro Contact <onboarding@resend.dev>',
@@ -43,10 +40,10 @@ export async function POST(request: Request) {
       `,
     });
 
-    console.log('Email sent successfully:', data);
     return NextResponse.json({ success: true, data });
+    */
   } catch (error: any) {
-    console.error('Detailed error sending email:', {
+    console.error('Detailed error in send-email:', {
       error: error.message,
       stack: error.stack,
       details: error
